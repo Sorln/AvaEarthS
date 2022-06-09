@@ -1,0 +1,126 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Avatar Earthbending Script                            (Sorln#3037)", "Synapse")
+local Tab = Window:NewTab("Lava")
+local Section = Tab:NewSection("Get Lava Moves for free")
+Section:NewButton("LavaPool", "ButtonInfo", function()
+    print("Clicked")
+    local ohInstance1 = game:GetService("ReplicatedStorage").GUI.LavaPool
+local ohBoolean2 = true
+
+game:GetService("ReplicatedStorage").GeneralRemotes.Equip:FireServer(ohInstance1, ohBoolean2)
+end)
+Section:NewButton("Lavaburst", "ButtonInfo", function()
+    print("Clicked")
+    local ohInstance1 = game:GetService("ReplicatedStorage").GUI.Lavaburst
+local ohBoolean2 = true
+
+game:GetService("ReplicatedStorage").GeneralRemotes.Equip:FireServer(ohInstance1, ohBoolean2)
+end)
+Section:NewButton("LavaDrops", "ButtonInfo", function()
+    print("Clicked")
+    local ohInstance1 = game:GetService("ReplicatedStorage").GUI.LavaDrops
+local ohBoolean2 = true
+
+game:GetService("ReplicatedStorage").GeneralRemotes.Equip:FireServer(ohInstance1, ohBoolean2)
+end)
+local Tab = Window:NewTab("Spam")
+local Section = Tab:NewSection("Spam Abilities")
+Section:NewToggle("Lava Pool On/Off", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+        _G.A = true
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.LavaPoolRemote:FireServer()
+  wait(0.5)
+end
+    else
+        print("Toggle Off")
+        _G.A = false
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.LavaPoolRemote:FireServer()
+  wait(0.5)
+end
+    end
+end)
+Section:NewToggle("Earth Shockwave On/Off", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+        _G.A = true
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.ShockwaveRemote:FireServer()
+  wait(0.5)
+end
+    else
+        print("Toggle Off")
+        _G.A = false
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.ShockwaveRemote:FireServer()
+  wait(0.5)
+end
+    end
+end)
+Section:NewToggle("Earthquake On/Off", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+        _G.A = true
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.EarthquakeRemote:FireServer()
+  wait(0.5)
+end
+    else
+        print("Toggle Off")
+        _G.A = false
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.EarthquakeRemote:FireServer()
+  wait(0.5)
+end
+    end
+end)
+Section:NewToggle("Sand Smoke Storm On/Off", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+        _G.A = true
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.SmokeRemote:FireServer()
+  wait(0.5)
+end
+    else
+        print("Toggle Off")
+        _G.A = false
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.SmokeRemote:FireServer()
+  wait(0.5)
+end
+    end
+end)
+Section:NewToggle("Sand Twister On/Off", "ToggleInfo", function(state)
+    if state then
+        print("Toggle On")
+        _G.A = true
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.TornadoRemote:FireServer()
+  wait(0.5)
+end
+    else
+        print("Toggle Off")
+        _G.A = false
+while _G.A == true do
+  game:GetService("ReplicatedStorage").AbilityRemotes.TornadoRemote:FireServer()
+  wait(0.5)
+end
+    end
+end)
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Change Speed/Jump")
+Section:NewSlider("WalkSpeed", "Change WalkSpeed", 300, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("JumpPower", "Change JumpPower", 250, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+local Tab = Window:NewTab("Admin")
+local Section = Tab:NewSection("The name explains it")
+Section:NewButton("Infinite Yield", "ButtonInfo", function()
+    print("Clicked")
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
